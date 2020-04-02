@@ -1,0 +1,9 @@
+C:\Users\gganp\Desktop\ERP-RUP\SEGURIDAD\Polizas\Polizas\bin\Debug\Polizas.dll
+C:\Users\gganp\Desktop\ERP-RUP\SEGURIDAD\Polizas\Polizas\bin\Debug\Polizas.pdb
+C:\Users\gganp\Desktop\ERP-RUP\SEGURIDAD\Polizas\Polizas\obj\Debug\Polizas.csprojAssemblyReference.cache
+C:\Users\gganp\Desktop\ERP-RUP\SEGURIDAD\Polizas\Polizas\obj\Debug\Polizas.Polizas.resources
+C:\Users\gganp\Desktop\ERP-RUP\SEGURIDAD\Polizas\Polizas\obj\Debug\Polizas.csproj.GenerateResource.cache
+C:\Users\gganp\Desktop\ERP-RUP\SEGURIDAD\Polizas\Polizas\obj\Debug\Polizas.csproj.CoreCompileInputs.cache
+C:\Users\gganp\Desktop\ERP-RUP\SEGURIDAD\Polizas\Polizas\obj\Debug\Polizas.dll
+C:\Users\gganp\Desktop\ERP-RUP\SEGURIDAD\Polizas\Polizas\obj\Debug\Polizas.pdb
+C:\Users\gganp\Desktop\ERP-RUP\SEGURIDAD\Polizas\Polizas\obj\Debug\Polizas.Properties.Resources.resources
