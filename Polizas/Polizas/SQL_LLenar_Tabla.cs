@@ -17,5 +17,40 @@ namespace Polizas
 			return dataTable;
 		}
 
+		public OdbcDataAdapter llenaTbl2(string tabla, string tipo)// metodo  que obtinene el contenio de una tabla
+		{
+			string sql = "SELECT id_poliza, fecha,fecha_inicio, fecha_fin FROM " + tabla + " where estado=1 AND tipo_poliza='"+tipo+"';";
+			OdbcDataAdapter dataTable = new OdbcDataAdapter(sql, conectar.conexion());
+			return dataTable;
+		}
+
+		public string [] llenarCombo()
+		{
+			string[] Combo = new string[30];
+			int i = 0;
+			OdbcCommand command = new OdbcCommand("SELECT tipo_poliza FROM poliza_encabezados WHERE estado=1 GROUP BY tipo_poliza ;", conectar.conexion());
+			OdbcDataReader reader = command.ExecuteReader();
+			while (reader.Read())
+			{
+				Combo[i] = reader.GetValue(0).ToString();
+				i++;
+			}
+			return Combo;
+		}
+
+		public void ejecutarQuery(string query)// ejecuta un query en la BD
+		{
+			try
+			{
+				OdbcCommand consulta = new OdbcCommand(query, conectar.conexion());
+				consulta.ExecuteNonQuery();
+			}
+			catch (OdbcException ex) { Console.WriteLine(ex.ToString()); }
+
+		}
+
+
+
+
 	}
 }

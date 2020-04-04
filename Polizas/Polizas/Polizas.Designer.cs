@@ -160,12 +160,14 @@
 			// 
 			// comboBox1
 			// 
+			this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBox1.FormattingEnabled = true;
 			this.comboBox1.ItemHeight = 21;
 			this.comboBox1.Location = new System.Drawing.Point(115, 84);
 			this.comboBox1.Name = "comboBox1";
 			this.comboBox1.Size = new System.Drawing.Size(300, 29);
 			this.comboBox1.TabIndex = 1;
+			this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
 			// 
 			// groupBox3
 			// 
@@ -208,6 +210,7 @@
 			this.button2.Text = "Limpiar";
 			this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.Button2_Click);
 			// 
 			// Btn_Buscar
 			// 
@@ -291,6 +294,7 @@
 			this.button6.Text = "Cancelar";
 			this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.button6.UseVisualStyleBackColor = false;
+			this.button6.Click += new System.EventHandler(this.Button6_Click);
 			// 
 			// tableLayoutPanel1
 			// 
@@ -345,6 +349,7 @@
 			this.button3.Text = "Crear";
 			this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.button3.UseVisualStyleBackColor = false;
+			this.button3.Click += new System.EventHandler(this.Button3_Click);
 			// 
 			// groupBox5
 			// 
@@ -374,6 +379,7 @@
 			this.button4.Text = "Limpiar";
 			this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.button4.UseVisualStyleBackColor = false;
+			this.button4.Click += new System.EventHandler(this.Button4_Click);
 			// 
 			// dataGridView2
 			// 
