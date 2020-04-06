@@ -228,6 +228,7 @@
 			this.Btn_Buscar.Text = "Buscar";
 			this.Btn_Buscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.Btn_Buscar.UseVisualStyleBackColor = false;
+			this.Btn_Buscar.Click += new System.EventHandler(this.Btn_Buscar_Click);
 			// 
 			// label3
 			// 
@@ -409,6 +410,7 @@
 			this.button5.Text = "Ver";
 			this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.button5.UseVisualStyleBackColor = false;
+			this.button5.Click += new System.EventHandler(this.Button5_Click);
 			// 
 			// Polizas
 			// 

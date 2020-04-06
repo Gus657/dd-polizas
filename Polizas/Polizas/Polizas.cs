@@ -13,6 +13,8 @@ namespace Polizas
 {
 	public partial class Polizas : Form
 	{
+		string Query = "";
+		SQL_LLenar_Tabla tramites = new SQL_LLenar_Tabla();
 		public Polizas()
 		{
 			InitializeComponent();
@@ -23,20 +25,24 @@ namespace Polizas
 			dateTimePicker2.CustomFormat = "yyyy-MM-dd";
 			dateTimePicker3.Format = DateTimePickerFormat.Custom;
 			dateTimePicker3.CustomFormat = "yyyy-MM-dd";
-			
+
+			OdbcDataAdapter dt = tramites.llenaTbl("poliza_detalles","1");
+			DataTable table = new DataTable();
+			dt.Fill(table);
+			dataGridView1.DataSource = table;
 		}
 
+		public void AsignarQuery(string Query) {
+			this.Query = Query;
+		}
 		public void AsignarColores(Color colorBarra , Color Titulo) {
 			panel1.BackColor = colorBarra;
 			label1.ForeColor = Titulo;
 		}
 		void refrescar()
 		{
-			SQL_LLenar_Tabla tramites = new SQL_LLenar_Tabla();
-			OdbcDataAdapter dt = tramites.llenaTbl("poliza_detalles");
-			DataTable table = new DataTable();
-			dt.Fill(table);
-			dataGridView1.DataSource = table;
+			
+			
 			string[] Combo = tramites.llenarCombo();
 			for (int i = 0; i <Combo.Length; i++)
 			{
@@ -60,8 +66,8 @@ namespace Polizas
 
 		private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			SQL_LLenar_Tabla tramites2 = new SQL_LLenar_Tabla();
-			OdbcDataAdapter dt2 = tramites2.llenaTbl2("poliza_encabezados", comboBox1.Text.ToString());
+		
+			OdbcDataAdapter dt2 = tramites.llenaTbl2("poliza_encabezados", comboBox1.Text.ToString());
 			DataTable table2 = new DataTable();
 			dt2.Fill(table2);
 			dataGridView2.DataSource = table2;
@@ -69,24 +75,28 @@ namespace Polizas
 
 		private void Button4_Click(object sender, EventArgs e)
 		{
-			SQL_LLenar_Tabla tramites2 = new SQL_LLenar_Tabla();
-			OdbcDataAdapter dt2 = tramites2.llenaTbl2("poliza_encabezados", comboBox1.Text.ToString());
-			DataTable table2 = new DataTable();
-			dt2.Fill(table2);
-			dataGridView2.DataSource = table2;
+			
+			OdbcDataAdapter dt2 = tramites.llenaTbl2("poliza_encabezados", comboBox1.Text.ToString());
+			DataTable table = new DataTable();
+			dt2.Fill(table);
+			dataGridView2.DataSource = table;
+
+			int filas = dataGridView1.Rows.Count - 1;
+			for (int i = 0; i < filas; i++)
+			{
+				dataGridView1.Rows.RemoveAt(0);
+			}
+
 		}
 
 		private void Button2_Click(object sender, EventArgs e)
 		{
-			
-
-			if (dataGridView1.Rows.Count-1 != 0)
-			{
-				for (int i = 0; i < dataGridView1.Rows.Count; i++)
+			int filas = dataGridView1.Rows.Count - 1;
+				for (int i = 0; i < filas; i++)
 				{
 					dataGridView1.Rows.RemoveAt(0);
 				}
-			}
+			
 
 
 
@@ -95,23 +105,71 @@ namespace Polizas
 		private void Button6_Click(object sender, EventArgs e)
 		{
 			comboBox1.Text = "";
-			if (dataGridView1.Rows.Count - 1 != 0)
+			int filas = dataGridView1.Rows.Count - 1;
+			for (int i = 0; i < filas; i++)
 			{
-				for (int i = 0; i < dataGridView1.Rows.Count; i++)
-				{
-					dataGridView1.Rows.RemoveAt(0);
-				}
+				dataGridView1.Rows.RemoveAt(0);
 			}
 
-			if (dataGridView2.Rows.Count - 1 != 0)
+			int filas2 = dataGridView2.Rows.Count - 1;
+			for (int i = 0; i < filas2; i++)
 			{
-				for (int i = 0; i < dataGridView2.Rows.Count; i++)
-				{
-					dataGridView2.Rows.RemoveAt(0);
-				}
+				dataGridView2.Rows.RemoveAt(0);
 			}
 		}
-
+		string limpiarFecha(string fecha) {
+			string fechaNew = "";
+			bool fin = true;
+			for (int i = 0; i < fecha.Length; i++)
+			{
+				if (fecha[i] == ' ')
+				{
+					fin = false;
+				}
+				if (fin)
+				{
+					if (fecha[i]=='/')
+					{
+						fechaNew += "-";
+					}
+					else
+					{
+						fechaNew += fecha[i];
+					}
+					
+				}
+				
+			}
+			fecha = fechaNew;
+			fechaNew = "";
+			int pos = 0;
+			string ano = "";string mes = ""; string dia = "";
+			for (int i = 0; i < fecha.Length; i++)
+			{
+				if (fecha[i] == '-')
+				{
+					pos++;
+				}
+				else {
+					switch (pos)
+					{
+						case 0:
+							dia += fecha[i];
+							break;
+						case 1:
+							mes += fecha[i];
+							break;
+						case 2:
+							ano += fecha[i];
+							break;
+					}
+				}
+				
+			}
+			fechaNew = ano+"-"+mes+"-"+dia;
+		
+			return fechaNew;
+		}
 		private void Button3_Click(object sender, EventArgs e)
 		{
 			string sql = "INSERT INTO poliza_encabezados " +
@@ -122,9 +180,41 @@ namespace Polizas
 				"1," +
 				"'"+dateTimePicker1.Text.ToString()+"'" +
 				");";
-			SQL_LLenar_Tabla tramites2 = new SQL_LLenar_Tabla();
-			MessageBox.Show(sql);
-			tramites2.ejecutarQuery(sql);
+			tramites.ejecutarQuery(sql);
+			int filas2 = dataGridView1.Rows.Count - 1;
+			for (int i = 0; i < filas2; i++)
+			{	
+					string sqls = "SELECT id_cuenta FROM cuentas WHERE nombre = '" + dataGridView1.CurrentRow.Cells[0].Value.ToString() + "'";
+					string sql2 = "INSERT INTO poliza_detalles (id_transaccion, id_poliza, id_cuenta, id_documento_asociado, fecha, debe, haber) VALUES ( "+i.ToString()+"," +
+					"" + textBox1.Text.ToString() + ", (" + sqls + "), " + dataGridView1.CurrentRow.Cells[1].Value.ToString() + " , '" + limpiarFecha(dataGridView1.CurrentRow.Cells[2].Value.ToString()) + "' , " + dataGridView1.CurrentRow.Cells[3].Value.ToString() + " , " + dataGridView1.CurrentRow.Cells[4].Value.ToString() + ")";
+					tramites.ejecutarQuery(sql2);
+					dataGridView1.Rows.RemoveAt(0);
+				
+				
+			}
+		}
+
+		private void Btn_Buscar_Click(object sender, EventArgs e)
+		{
+			if (Query != "")
+			{
+				OdbcDataAdapter dt2 = tramites.LLenarTabla(Query);
+				DataTable table = new DataTable();
+				dt2.Fill(table);
+				dataGridView1.DataSource = table;
+			}
+			else {
+
+			}
+			
+		}
+
+		private void Button5_Click(object sender, EventArgs e)
+		{
+			OdbcDataAdapter dt2 = tramites.llenaTbl3("poliza_detalles",dataGridView2.CurrentRow.Cells[0].Value.ToString());
+			DataTable table = new DataTable();
+			dt2.Fill(table);
+			dataGridView1.DataSource = table;
 		}
 	}
 }
