@@ -1,0 +1,25 @@
+1-- Referencia
+Agregar la referencia en el proyecto NO es un componente de barra de  Herrmaientas.
+
+2-- Llamar al Form
+Agregamos la siguiete instruccion:
+Polizas.Polizas poli = new Polizas.Polizas();
+poli.Show();
+
+
+3-- QUERY
+Para agregar el Query y que funcione de manera correcta, habrá que sustituir la fecha de
+inicio con 'FechaI' y la Fecha Final con 'FechaF' . *EN COMILLAS SIMPLES
+
+Ejemplo:
+
+-Query Normal
+ SELECT * FROM tabla WHERE inicio > '2020-02-15' AND fin < '2020-03-15';
+
+-Query para Asignar
+ SELECT * FROM tabla WHERE inicio > 'FechaI' AND fin < 'FechaF';
+
+Para asignar el Query usaremos el Siguiente metodo:
+poli.AsignarQuery("Acá van sus Querys");
+
+Listo!
