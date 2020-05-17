@@ -41,35 +41,28 @@
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.button2 = new System.Windows.Forms.Button();
 			this.Btn_Buscar = new System.Windows.Forms.Button();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
 			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			this.button6 = new System.Windows.Forms.Button();
-			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
 			this.button3 = new System.Windows.Forms.Button();
 			this.groupBox5 = new System.Windows.Forms.GroupBox();
-			this.button4 = new System.Windows.Forms.Button();
 			this.dataGridView2 = new System.Windows.Forms.DataGridView();
-			this.button5 = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.panel1.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox4.SuspendLayout();
-			this.tableLayoutPanel1.SuspendLayout();
 			this.groupBox5.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dataGridView1
 			// 
+			this.dataGridView1.AllowUserToAddRows = false;
 			this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridView1.Location = new System.Drawing.Point(18, 28);
@@ -93,11 +86,11 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(326, 35);
+			this.label1.Location = new System.Drawing.Point(394, 36);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(351, 41);
+			this.label1.Size = new System.Drawing.Size(140, 41);
 			this.label1.TabIndex = 0;
-			this.label1.Text = "Creación de Pólizas";
+			this.label1.Text = " Pólizas";
 			// 
 			// groupBox1
 			// 
@@ -116,6 +109,7 @@
 			// 
 			// textBox1
 			// 
+			this.textBox1.Enabled = false;
 			this.textBox1.Location = new System.Drawing.Point(115, 49);
 			this.textBox1.Name = "textBox1";
 			this.textBox1.Size = new System.Drawing.Size(300, 27);
@@ -181,7 +175,6 @@
 			// 
 			// groupBox2
 			// 
-			this.groupBox2.Controls.Add(this.button2);
 			this.groupBox2.Controls.Add(this.Btn_Buscar);
 			this.groupBox2.Controls.Add(this.label3);
 			this.groupBox2.Controls.Add(this.label2);
@@ -194,24 +187,6 @@
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Período";
 			// 
-			// button2
-			// 
-			this.button2.BackColor = System.Drawing.Color.White;
-			this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-			this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
-			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-			this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.button2.Location = new System.Drawing.Point(448, 91);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(107, 63);
-			this.button2.TabIndex = 7;
-			this.button2.Text = "Limpiar";
-			this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.button2.UseVisualStyleBackColor = false;
-			this.button2.Click += new System.EventHandler(this.Button2_Click);
-			// 
 			// Btn_Buscar
 			// 
 			this.Btn_Buscar.BackColor = System.Drawing.Color.White;
@@ -221,7 +196,7 @@
 			this.Btn_Buscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Btn_Buscar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Buscar.Image")));
 			this.Btn_Buscar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.Btn_Buscar.Location = new System.Drawing.Point(448, 22);
+			this.Btn_Buscar.Location = new System.Drawing.Point(449, 53);
 			this.Btn_Buscar.Name = "Btn_Buscar";
 			this.Btn_Buscar.Size = new System.Drawing.Size(107, 63);
 			this.Btn_Buscar.TabIndex = 5;
@@ -267,9 +242,6 @@
 			// 
 			// groupBox4
 			// 
-			this.groupBox4.Controls.Add(this.button6);
-			this.groupBox4.Controls.Add(this.tableLayoutPanel1);
-			this.groupBox4.Controls.Add(this.label7);
 			this.groupBox4.Controls.Add(this.button3);
 			this.groupBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.groupBox4.Location = new System.Drawing.Point(589, 316);
@@ -278,60 +250,6 @@
 			this.groupBox4.TabIndex = 4;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "Terminar";
-			// 
-			// button6
-			// 
-			this.button6.BackColor = System.Drawing.Color.White;
-			this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
-			this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
-			this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-			this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.button6.Location = new System.Drawing.Point(298, 91);
-			this.button6.Name = "button6";
-			this.button6.Size = new System.Drawing.Size(94, 63);
-			this.button6.TabIndex = 8;
-			this.button6.Text = "Cancelar";
-			this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.button6.UseVisualStyleBackColor = false;
-			this.button6.Click += new System.EventHandler(this.Button6_Click);
-			// 
-			// tableLayoutPanel1
-			// 
-			this.tableLayoutPanel1.ColumnCount = 1;
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel1.Controls.Add(this.label8, 0, 0);
-			this.tableLayoutPanel1.Location = new System.Drawing.Point(15, 101);
-			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-			this.tableLayoutPanel1.RowCount = 1;
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(253, 48);
-			this.tableLayoutPanel1.TabIndex = 7;
-			// 
-			// label8
-			// 
-			this.label8.AutoSize = true;
-			this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.label8.Font = new System.Drawing.Font("Century Gothic", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(3, 0);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(247, 48);
-			this.label8.TabIndex = 1;
-			this.label8.Text = "Saldo";
-			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.Location = new System.Drawing.Point(94, 53);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(88, 32);
-			this.label7.TabIndex = 6;
-			this.label7.Text = "Saldo";
 			// 
 			// button3
 			// 
@@ -342,45 +260,25 @@
 			this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
 			this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.button3.Location = new System.Drawing.Point(298, 16);
+			this.button3.Location = new System.Drawing.Point(158, 47);
 			this.button3.Name = "button3";
 			this.button3.Size = new System.Drawing.Size(94, 69);
 			this.button3.TabIndex = 6;
 			this.button3.Tag = "";
-			this.button3.Text = "Crear";
+			this.button3.Text = "Enviar";
 			this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.button3.UseVisualStyleBackColor = false;
 			this.button3.Click += new System.EventHandler(this.Button3_Click);
 			// 
 			// groupBox5
 			// 
-			this.groupBox5.Controls.Add(this.button4);
 			this.groupBox5.Controls.Add(this.dataGridView2);
-			this.groupBox5.Controls.Add(this.button5);
 			this.groupBox5.Location = new System.Drawing.Point(461, 124);
 			this.groupBox5.Name = "groupBox5";
 			this.groupBox5.Size = new System.Drawing.Size(537, 186);
 			this.groupBox5.TabIndex = 20;
 			this.groupBox5.TabStop = false;
 			this.groupBox5.Text = "Pólizas Generadas";
-			// 
-			// button4
-			// 
-			this.button4.BackColor = System.Drawing.Color.White;
-			this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-			this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
-			this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-			this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.button4.Location = new System.Drawing.Point(445, 109);
-			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(86, 63);
-			this.button4.TabIndex = 10;
-			this.button4.Text = "Limpiar";
-			this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.button4.UseVisualStyleBackColor = false;
-			this.button4.Click += new System.EventHandler(this.Button4_Click);
 			// 
 			// dataGridView2
 			// 
@@ -390,27 +288,9 @@
 			this.dataGridView2.Name = "dataGridView2";
 			this.dataGridView2.ReadOnly = true;
 			this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dataGridView2.Size = new System.Drawing.Size(422, 145);
+			this.dataGridView2.Size = new System.Drawing.Size(514, 145);
 			this.dataGridView2.TabIndex = 21;
 			this.dataGridView2.TabStop = false;
-			// 
-			// button5
-			// 
-			this.button5.BackColor = System.Drawing.Color.White;
-			this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
-			this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
-			this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-			this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.button5.Location = new System.Drawing.Point(445, 24);
-			this.button5.Name = "button5";
-			this.button5.Size = new System.Drawing.Size(86, 63);
-			this.button5.TabIndex = 9;
-			this.button5.Text = "Ver";
-			this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-			this.button5.UseVisualStyleBackColor = false;
-			this.button5.Click += new System.EventHandler(this.Button5_Click);
 			// 
 			// Polizas
 			// 
@@ -427,6 +307,7 @@
 			this.Name = "Polizas";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Polizas";
+			this.Load += new System.EventHandler(this.Polizas_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
@@ -436,9 +317,6 @@
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
 			this.groupBox4.ResumeLayout(false);
-			this.groupBox4.PerformLayout();
-			this.tableLayoutPanel1.ResumeLayout(false);
-			this.tableLayoutPanel1.PerformLayout();
 			this.groupBox5.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
 			this.ResumeLayout(false);
@@ -456,7 +334,6 @@
 		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.GroupBox groupBox2;
-		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button Btn_Buscar;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
@@ -469,11 +346,5 @@
 		private System.Windows.Forms.DateTimePicker dateTimePicker3;
 		private System.Windows.Forms.GroupBox groupBox5;
 		private System.Windows.Forms.DataGridView dataGridView2;
-		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.Button button6;
-		private System.Windows.Forms.Button button4;
-		private System.Windows.Forms.Button button5;
 	}
 }

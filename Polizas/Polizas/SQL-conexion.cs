@@ -11,7 +11,7 @@ namespace Polizas
 
 		public OdbcConnection conexion()
 		{
-			OdbcConnection conn = new OdbcConnection("Dsn=frm");// creacion de la conexion via ODBC
+			OdbcConnection conn = new OdbcConnection("Dsn=ERP");// creacion de la conexion via ODBC
 			try
 			{
 				conn.Open();
