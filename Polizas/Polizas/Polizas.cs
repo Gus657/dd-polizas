@@ -181,6 +181,11 @@ namespace Polizas
 					}
 					dataGridView1.Rows.Remove(dataGridView1.Rows[0]);
 					MessageBox.Show("La póliza ha sido enviada, exitosamente!");
+					textBox1.Text = tramites.ObtenerIdPoliza();
+					OdbcDataAdapter dt2 = tramites.llenaTbl2("poliza_encabezados", comboBox1.Text.ToString());
+					DataTable table2 = new DataTable();
+					dt2.Fill(table2);
+					dataGridView2.DataSource = table2;
 				}
 			}
 			
